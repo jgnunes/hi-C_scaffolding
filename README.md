@@ -13,6 +13,9 @@ Segue uma descrição geral das principais etapas para executar o SALSA. Uma des
   O processo começa pelo alinhamento das leituras Hi-C contra os contigs do genoma rascunho inicial. Após o mapeamento, alguns controles de qualidade são aplicados. 
 2. Correção de erros na montagem inicial  
   Após o mapeamento das leituras Hi-C, é realizada uma etapa de correção de erros na montagem inicial. Isso é feito buscando-se por regiões com baixa cobertura física a partir do mapeamento das leituras Hi-C. Uma vez identificada uma região cuja cobertura física é significativamente inferior a de sua vizinhança, o contig original é quebrado em dois contigs menores.  
+
+![Cobertura física](physical_coverage.png)
+
 3. Construção do grafo e pontuação das conexões  
   
 
