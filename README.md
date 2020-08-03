@@ -27,7 +27,12 @@ Segue uma descrição geral das principais etapas para executar o SALSA. Uma des
     
     <img src="https://user-images.githubusercontent.com/22843614/89228957-f20e2980-d5b6-11ea-9a20-ffb0c8bd871d.png" width="40%">  
     
-4. Construção dos scaffolds
+4. Construção dos scaffolds  
+  Os scaffolds serão construídos a partir do grafo obtido na etapa anterior. Em resumo, primeiro procuramos por pares de nós que estejam conectados apenas a um outro nó (vértice de grau 1). Esses pares são pela definição do grafo, extremos desse grafo (veja no entanto que o grafo pode conter vários sub-grupos/scaffolds, caracterizando vários pares de nó extremos). A partir de um desses nós percorremos o caminho até o outro e contamos o número de arestas nesse caminho, incluindo arestas que conectam dois nós de um mesmo contig (representando suas extremidades inicial e final). Se o número de arestas contado for superior a um limite previamente delimitado Nth, então este subconjunto do grafo será marcado como um scaffold semente (*seed scaffold*). Se inferior, será marcado como um scaffold pequeno (*small scaffold*). Finalmente, cada contig de cada scaffold pequeno é inserido em um scaffold semente, na posição e orientação que maximizem o somatório dos pesos das arestas naquele scaffold semente. Uma vez que todos os contigs dos scaffolds pequenos tenham sido alocados em algum scaffold semente, o processo está finalizado.   
+
+### Insigths interessantes  
+#### É possível utilizar dados de Chicago Library  
+> "Our method can be extended to leverage other chromatin interaction datasets such as Dovetail Chicago libraries [40] and can adapt to their chromosomal contact model."
 
 ## Referências  
 ### SALSA
