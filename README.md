@@ -34,6 +34,16 @@ Segue uma descrição geral das principais etapas para executar o SALSA. Uma des
 #### É possível utilizar dados de Chicago Library  
 > "Our method can be extended to leverage other chromatin interaction datasets such as Dovetail Chicago libraries [40] and can adapt to their chromosomal contact model."
 
+### Inputs necessários  
+O programa SALSA requer dois arquivos como input: 
+* Arquivo de alinhamento no formato BED, o que significa que provavelmente após o mapeamento das leituras Hi-C contra a montagem inicial precisaremos fazer uma conversão do formato BAM (que é o output padrão dos alinhadores populares, Bowtie e BWA-MEM) para o formato BED  
+* Além do arquivo de alinhamento, o SALSA requer um arquivo descrevendo os tamanhos dos contigs da montagem inicial  
+
+**Importante**: Para mais detalhes de como gerar ambos arquivos, por favor recorrer à [documentação](https://github.com/marbl/SALSA#how-to-run-the-code) do SALSA no github  
+
+### Output: como interpretar?  
+
+
 ## Referências  
 ### SALSA
 * [Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
