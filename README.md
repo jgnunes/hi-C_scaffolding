@@ -7,9 +7,18 @@ O scaffolding baseado em dados de Hi-C toma proveito das informações de intera
 ## SALSA: Simple Assembly Scaffolder  
 Nossa escolha inicial de programa para realizar o scaffolding baseado em Hi-C é o SALSA (**S**imple **A**ssemb**L**y **S**c**A**ffolder). Ele oferece uma vantagem sobre o competidor LACHESIS: realiza uma etapa prévia de correção da montagem antes de fazer o scaffolding. Isto contribui não só para não passar adiante os erros, como também para melhorar a eficiência da etapa de scaffolding.  
 
+### Etapas  
+Segue uma descrição geral das principais etapas para executar o SALSA. Uma descrição mais detalhada é encontrada no próprio repositório do github do SALSA. Clique [aqui](https://github.com/marbl/SALSA#how-to-run-the-code) para ser redirecionado.   
+1. Alinhamento das leituras Hi-C  
+  O processo começa pelo alinhamento das leituras Hi-C contra os contigs do genoma rascunho inicial. Após o mapeamento, alguns controles de qualidade são aplicados. 
+2. Correção de erros na montagem inicial  
+  Após o mapeamento das leituras Hi-C, é realizada uma etapa de correção de erros na montagem inicial. Isso é feito buscando-se por regiões com baixa cobertura física a partir do mapeamento das leituras Hi-C. Uma vez identificada uma região cuja cobertura física é significativamente inferior a de sua vizinhança, o contig original é quebrado em dois contigs menores.  
+3. Construção do grafo e pontuação das conexões  
+  
+
 ## Referências  
 ### SALSA
-[Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)
-[Repositório no Github](https://github.com/marbl/SALSA)
+* [Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
+* [Repositório no Github](https://github.com/marbl/SALSA)  
   
 
