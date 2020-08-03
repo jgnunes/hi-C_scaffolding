@@ -17,6 +17,7 @@ Segue uma descrição geral das principais etapas para executar o SALSA. Uma des
 ![Cobertura física](https://github.com/jgnunes/hi-C_scaffolding/blob/master/images/physical_coverage.png)
 
 3. Construção do grafo e pontuação das conexões  
+  Aqui começa a mágica. A primeira etapa para geração dos scaffolds é na verdade a construção de um grafo. Neste grafo, cada nó representa as extremidades (*ends*) final e inicial de um contig; cada aresta (*edge*) representa uma conexão entre a extremidade de um contig e a extremidade de outro contig; cada aresta recebe um peso (*weight*), baseado nas informações de frequência de contato geradas pelas leituras Hi-C. É importante notar, no entanto, que o peso não é uma simples contagem de quantas leituras de Hi-C conectaram as duas extremidades do par de contigs em questão. Isso seria injusto pois contigs maiores teriam sempre uma tendência de mostrar mais eventos de contato por uma questão de probabilidade. Para normalizar pelo tamanho dos contigs, o peso de cada aresta é dividido pela quantidade de sítios de corte da enzima de restrição usada no experimento nas extremidades consideradas.  
   
 
 ## Referências  
