@@ -21,7 +21,11 @@ Segue uma descrição geral das principais etapas para executar o SALSA. Uma des
 
     <img src="https://user-images.githubusercontent.com/22843614/89224455-e4ed3c80-d5ae-11ea-8c6d-71dc5e938f64.png" width="30%">  
     
-    onde *C1* e *C2* são o par de contigs em consideração, *links(C1,C2)* é o número de conexões Hi-C presentes dentro da região de comprimento *l* nas extremidades dos contigs, e *RE(C1)* e *RE(C2)* é o número de sítios de corte pela enzima de restrição na região de comprimento *l* nas extremidades de C1 e C2. 
+    onde *C1* e *C2* são o par de contigs em consideração, *links(C1,C2)* é o número de conexões Hi-C presentes dentro da região de comprimento *l* nas extremidades dos contigs, e *RE(C1)* e *RE(C2)* é o número de sítios de corte pela enzima de restrição na região de comprimento *l* nas extremidades de C1 e C2.  
+    
+  O algoritmo de construção do grafo começa ordenando todos os pares de nós por ordem decrescente do peso da aresta, ou seja, aqueles pares de nós com maiores evidências de contato suportado por dados de Hi-C serão os primeiros. Então, os pares de nós vão sendo, um a um, adicionados ao grafo. Aqueles pares de nós cujos um dos membros já tiverem sido adicionados ao grafo não são inclusos. Ao final, são inseridas arestas para conectar os nós inicial e final de cada contig (ex: início do contig X é conectado ao final do contig X). 
+  
+    <img src="https://user-images.githubusercontent.com/22843614/89228957-f20e2980-d5b6-11ea-9a20-ffb0c8bd871d.png" width="30%">
 
 ## Referências  
 ### SALSA
