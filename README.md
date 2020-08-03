@@ -35,14 +35,17 @@ Segue uma descrição geral das principais etapas para executar o SALSA. Uma des
 > "Our method can be extended to leverage other chromatin interaction datasets such as Dovetail Chicago libraries [40] and can adapt to their chromosomal contact model."
 
 ### Inputs necessários  
-O programa SALSA requer dois arquivos como input: 
+O programa SALSA requer três inputs principais: 
 * Arquivo de alinhamento no formato BED, o que significa que provavelmente após o mapeamento das leituras Hi-C contra a montagem inicial precisaremos fazer uma conversão do formato BAM (que é o output padrão dos alinhadores populares, Bowtie e BWA-MEM) para o formato BED  
-* Além do arquivo de alinhamento, o SALSA requer um arquivo descrevendo os tamanhos dos contigs da montagem inicial  
+* Arquivo descrevendo os tamanhos dos contigs da montagem inicial  
+* Nome da enzima de restrição utilizada para construção da biblioteca Hi-C  
+  - No nosso caso, a enzima utilizada foi a DpnII, como documentado no próprio [e-mail da Dovetail](https://mail.google.com/mail/u/0/?tab=cm#starred/FMfcgxwGCkkFBSHKWfVmjGNHwLLKVHhR)
 
-**Importante**: Para mais detalhes de como gerar ambos arquivos, por favor recorrer à [documentação](https://github.com/marbl/SALSA#how-to-run-the-code) do SALSA no github  
+**Importante**: Para mais detalhes de como gerar os dois arquivos, por favor recorrer à [documentação](https://github.com/marbl/SALSA#how-to-run-the-code) do SALSA no github  
 
 ### Output: como interpretar?  
-
+Por padrão, o programa salsa armazena todos seus arquivos no diretório *SALSA_OUT_DIR*. O programa gera uma série de arquivos intermediários, mas provavelmente o arquivo no qual estaremos interessado de fato é o arquivo contendo os scaffolds finais: *scaffolds_FINAL.fasta*. Além dele, o arquivo *scaffolds_FINAL.agp* descreve no formato *AGP* a ordem e orientação de cada contig em cada scaffold.  
+Por fim, pode ser de nosso interesse converter o arquivo *scaffolds_FINAL.fasta* para o formato *.hic*, o qual pode ser utilizado para se visualizar a matriz de contatos dos loci do genoma usando programas como o Juicebox. Mais detalhes sobre a conversão de *.fasta* para *.hic* podem ser encontrados no próprio [repositório do SALSA no github](https://github.com/marbl/SALSA#generate-hic-file-from-salsa-scaffolds).  
 
 ## Referências  
 ### SALSA
