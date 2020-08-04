@@ -62,7 +62,7 @@ b) Translocações: se manifestam na forma de gravatas borboletas (*bowties*) ho
 
 <img src="https://user-images.githubusercontent.com/22843614/89343968-8346d400-d67b-11ea-83f3-1dbf36d37fa5.png" width="80%">
 
-b) Inversões: se manifestam na forma de gravatas borboletas paralelas à diagonal principal. 
+c) Inversões: se manifestam na forma de gravatas borboletas paralelas à diagonal principal. 
 
 <img src="https://user-images.githubusercontent.com/22843614/89344140-cbfe8d00-d67b-11ea-87a4-3da215fea151.png" width="80%">  
 
