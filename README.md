@@ -47,7 +47,7 @@ O programa SALSA requer três inputs principais:
 Por padrão, o programa salsa armazena todos seus arquivos no diretório *SALSA_OUT_DIR*. O programa gera uma série de arquivos intermediários, mas provavelmente o arquivo no qual estaremos interessado de fato é o arquivo contendo os scaffolds finais: *scaffolds_FINAL.fasta*. Além dele, o arquivo *scaffolds_FINAL.agp* descreve no formato *AGP* a ordem e orientação de cada contig em cada scaffold.  
 Por fim, pode ser de nosso interesse converter o arquivo *scaffolds_FINAL.fasta* para o formato *.hic*, o qual pode ser utilizado para se visualizar a matriz de contatos dos loci do genoma usando programas como o Juicebox. Mais detalhes sobre a conversão de *.fasta* para *.hic* podem ser encontrados no próprio [repositório do SALSA no github](https://github.com/marbl/SALSA#generate-hic-file-from-salsa-scaffolds). Eventualmente, vamos querer que a visualização dos scaffolds do nosso genoma final se pareça com essa visualização gerada pelo Juicebox para os contatos entre os cromossomos humanos:  
 
-<img src="https://user-images.githubusercontent.com/22843614/89295465-6be5f780-d637-11ea-9032-9d3e29a3dd0b.png" width="60%">
+<img src="https://user-images.githubusercontent.com/22843614/89295465-6be5f780-d637-11ea-9032-9d3e29a3dd0b.png" width="40%">
 
 ## To Do  
 * Entender como é feita a curadoria manual do scaffolding para corrigir eventuais erros de scaffolding causados por predição errônea de programas de bioinformática como o SALSA  
