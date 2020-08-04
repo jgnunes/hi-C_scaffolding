@@ -74,5 +74,5 @@ Para todos esses três tipos de erros comentados, é possível corrigir as monta
 * [Repositório no Github](https://github.com/marbl/SALSA)  
 
 ### Curadoria manual   
-[Dudchenko et al., 2018](https://www.biorxiv.org/content/10.1101/254797v1.full#F2)
+* [Dudchenko et al., 2018](https://www.biorxiv.org/content/10.1101/254797v1.full#F2)
 
