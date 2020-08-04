@@ -49,11 +49,29 @@ Por fim, pode ser de nosso interesse converter o arquivo *scaffolds_FINAL.fasta*
 
 <img src="https://user-images.githubusercontent.com/22843614/89295465-6be5f780-d637-11ea-9032-9d3e29a3dd0b.png" width="40%">
 
-## To Do  
-* Entender como é feita a curadoria manual do scaffolding para corrigir eventuais erros de scaffolding causados por predição errônea de programas de bioinformática como o SALSA  
+## Curadoria manual pós-scaffolding 
+A curadoria manual é uma etapa de correção de eventuais erros de scaffolding causados por predição errônea de programas de bioinformática como o SALSA. A ideia aqui é que a partir da investigação da matriz de frequência de contatos do Hi-C conseguiremos identificar e corrigir eventuais problemas na montagem.  
+
+O programa Juicebox tem um módulo específico para identificar e corrigir erros de montagem, chamado *Juicebox Assembly Tools*. No artigo de lançamento do módulo, Dudchenko e colaboradores (2018) demonstram como o módulo pode ser utilizado para detecção de translocações, inversões e erros de junção (*misjoins*). De acordo com os autores, esses erros se manifestam em padrões identificáveis nos mapas de frequência de contato obtidos por dados Hi-C:  
+
+a) Translocações: se manifestam na forma de gravatas borboletas (*bowties*) horizontais ou verticais, cujos pontos centrais representam loci que estão fisicamente próximos no genoma, porém posicionados erroneamente distantes na montagem.  
+
+<img src="https://user-images.githubusercontent.com/22843614/89343968-8346d400-d67b-11ea-83f3-1dbf36d37fa5.png" width="80%">
+
+b) Inversões: se manifestam na forma de gravatas borboletas paralelas à diagonal principal. 
+
+<img src="https://user-images.githubusercontent.com/22843614/89344140-cbfe8d00-d67b-11ea-87a4-3da215fea151.png" width="80%">  
+
+c) Erros de junção: quando duas sequências são unidas erroneamente, isso se manifesta sob a forma de um grande clarão (região de muito baixa densidade de contato) no quadrante superior direito e inferior esquerdo.  
+
+<img src="https://user-images.githubusercontent.com/22843614/89344484-5646f100-d67c-11ea-8d39-64c98d1c713e.png" width="80%"> 
+
+
 ## Referências  
 ### SALSA
 * [Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
 * [Repositório no Github](https://github.com/marbl/SALSA)  
-  
+
+### Curadoria manual   
+[Dudchenko et al., 2018](https://www.biorxiv.org/content/10.1101/254797v1.full#F2)
 
