@@ -67,6 +67,10 @@ c) Inversões: se manifestam na forma de gravatas borboletas paralelas à diagon
 
 Para todos esses três tipos de erros comentados, é possível corrigir as montagens com um simples arrastar de *mouse* no Juicebox, utilizando para isso o módulo *Juicebox Assembly Tools*. As correções aplicadas utilizando esta ferramenta estão ilustradas nos painéis centrais das figuras acima. Finalmente, os painéis da direita ilustram a matriz atualizada após as correções serem aplicadas. 
 
+## To Do  
+* Estudar como utilizar o [Pretext View](https://github.com/wtsi-hpag/PretextView) para curadoria manual do scaffolding
+  * Ele e o Juicebox foram as sugestões iniciais de programas da Marcela 
+
 ## Referências  
 ### SALSA
 * [Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
