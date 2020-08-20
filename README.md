@@ -79,7 +79,7 @@ Exemplo de inconsistência detectada na montagem do genoma de uma ave utilizando
 #### 2.1 Programa gEVAL  
 * Artigo de lançamento do programa: clique [aqui](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4978925/)  
 * Página no Sanger: clique [aqui](https://geval.sanger.ac.uk/index.html)  
-* Página no Github: clique [aqui](http://wchow.github.io/wtsi-geval-plugin/)
+* Página no Github: clique [aqui](https://github.com/wchow/wtsi-geval-plugin)
 
 ## To Do  
 * Estudar como utilizar o [Pretext View](https://github.com/wtsi-hpag/PretextView) para curadoria manual do scaffolding
