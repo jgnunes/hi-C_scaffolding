@@ -74,7 +74,7 @@ Para todos esses três tipos de erros comentados, é possível corrigir as monta
 Em adição ao mapa de Hi-C, o time de curadoria do Instituto Sanger utiliza uma série de outros dados para realizar a curadoria manual da montagem ([Howe et al., 2020](https://doi.org/10.1101/2020.08.12.247734)). A ideia é plotar todos esses dados contra a montagem à procura de eventuais inconsistências entre os dados e a montagem. Essas regiões de inconsistência representam potenciais erros de montagem e, quando possível, devem ser corrigidas (em certos casos a correção requer necessariamente gerar novos dados de sequenciamento). Os tipos de dados tradicionalmente usados para a curadoria pelo time do Sanger estão resumidos na Tabela 2 do artigo de [Howe e colaboradores (2012)](https://doi.org/10.1101/2020.08.12.247734). Para plotar todos os dados simultaneamente contra o genoma a ser curado, o time utiliza o navegador de genoma *gEVAL*.  
 
 <img src="https://user-images.githubusercontent.com/22843614/90806533-87b5f280-e2f3-11ea-8b2e-410b98f31016.png">  
-
+Exemplo de inconsistência detectada na montagem do genoma de uma ave utilizando o programa *gEVAL* ([Howe et al., 2020](https://doi.org/10.1101/2020.08.12.247734))
 
 #### Programa gEVAL
 
