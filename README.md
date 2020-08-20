@@ -51,6 +51,9 @@ Por fim, pode ser de nosso interesse converter o arquivo *scaffolds_FINAL.fasta*
 ## Curadoria manual pós-scaffolding 
 A curadoria manual é uma etapa de correção de eventuais erros de scaffolding causados por predição errônea de programas de bioinformática como o SALSA. A ideia aqui é que a partir da investigação da matriz de frequência de contatos do Hi-C conseguiremos identificar e corrigir eventuais problemas na montagem.  
 
+### Via mapas de Hi-C  
+#### Utilizando o programa Juicebox
+
 O programa Juicebox tem um módulo específico para identificar e corrigir erros de montagem, chamado *Juicebox Assembly Tools*. No artigo de lançamento do módulo, Dudchenko e colaboradores (2018) demonstram como o módulo pode ser utilizado para detecção de translocações, inversões e erros de junção (*misjoins*). De acordo com os autores, esses erros se manifestam em padrões identificáveis (indicados por grandes setas nos painés esquerdos abaixo) nos mapas de frequência de contato obtidos por dados Hi-C:  
 
 a) Erros de junção: quando duas sequências são unidas erroneamente, isso se manifesta sob a forma de um grande clarão (região de muito baixa densidade de contato) no quadrante superior direito e inferior esquerdo.  
@@ -65,7 +68,11 @@ c) Inversões: se manifestam na forma de gravatas borboletas paralelas à diagon
 
 <img src="https://user-images.githubusercontent.com/22843614/89344140-cbfe8d00-d67b-11ea-87a4-3da215fea151.png" width="80%">  
 
-Para todos esses três tipos de erros comentados, é possível corrigir as montagens com um simples arrastar de *mouse* no Juicebox, utilizando para isso o módulo *Juicebox Assembly Tools*. As correções aplicadas utilizando esta ferramenta estão ilustradas nos painéis centrais das figuras acima. Finalmente, os painéis da direita ilustram a matriz atualizada após as correções serem aplicadas. 
+Para todos esses três tipos de erros comentados, é possível corrigir as montagens com um simples arrastar de *mouse* no Juicebox, utilizando para isso o módulo *Juicebox Assembly Tools*. As correções aplicadas utilizando esta ferramenta estão ilustradas nos painéis centrais das figuras acima. Finalmente, os painéis da direita ilustram a matriz atualizada após as correções serem aplicadas.  
+
+### Via plot simultâneo de múltiplos conjuntos de dados contra o genoma  
+Em adição ao mapa de Hi-C, o time de curadoria do Instituto Sanger utiliza uma série de outros dados para realizar a curadoria manual da montagem ([Howe et al., 2020](https://doi.org/10.1101/2020.08.12.247734)). A ideia é plotar todos esses dados contra a montagem à procura de eventuais inconsistências entre os dados e a montagem. Essas regiões de inconsistência representam potenciais erros de montagem e, quando possível, devem ser corrigidas (em certos casos a correção requer necessariamente gerar novos dados de sequenciamento). Os tipos de dados tradicionalmente usados para a curadoria pelo time do Sanger estão resumidos na Tabela 2 do artigo de [Howe e colaboradores (2012)](https://doi.org/10.1101/2020.08.12.247734). Para plotar todos os dados simultaneamente contra o genoma a ser curado, o time utiliza o navegador de genoma *gEVAL*.  
+#### Programa gEVAL
 
 ## To Do  
 * Estudar como utilizar o [Pretext View](https://github.com/wtsi-hpag/PretextView) para curadoria manual do scaffolding
