@@ -76,7 +76,10 @@ Em adição ao mapa de Hi-C, o time de curadoria do Instituto Sanger utiliza uma
 <img src="https://user-images.githubusercontent.com/22843614/90806533-87b5f280-e2f3-11ea-8b2e-410b98f31016.png">  
 Exemplo de inconsistência detectada na montagem do genoma de uma ave utilizando o programa *gEVAL*. Fonte: Howe et al., 2020
 
-#### 2.1 Programa gEVAL
+#### 2.1 Programa gEVAL  
+* Artigo de lançamento do programa: clique [aqui](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4978925/)  
+* Página no Sanger: clique [aqui](https://geval.sanger.ac.uk/index.html)  
+* Página no Github: clique [aqui](http://wchow.github.io/wtsi-geval-plugin/)
 
 ## To Do  
 * Estudar como utilizar o [Pretext View](https://github.com/wtsi-hpag/PretextView) para curadoria manual do scaffolding
