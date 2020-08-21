@@ -1,5 +1,5 @@
 # Sobre o artigo   
-O time de curadoria manual do Instituto Sanger lançou um [artigo]((https://doi.org/10.1101/2020.08.12.247734)) descrevendo sua estratégia de curadoria de genomas. O artigo foi publicado em pré-print, com autoria de Howe e colaboradores (2020). Aqui você poderá encontrar alguns destaques das diferentes partes do artigo.  
+O time de curadoria manual do Instituto Sanger lançou um [artigo](https://doi.org/10.1101/2020.08.12.247734) descrevendo sua estratégia de curadoria de genomas. O artigo foi publicado em pré-print, com autoria de Howe e colaboradores (2020). Aqui você poderá encontrar alguns destaques das diferentes partes do artigo.  
 
 ## 1. Background  
 ### 1.1 Curadoria adiciona significativo valor à montagem  
@@ -19,6 +19,13 @@ O time de curadoria manual do Instituto Sanger lançou um [artigo]((https://doi.
 * Central para esse processo de curadoria é o navegador de avaliação de genomas *gEVAL*, que permite visualização de discordância entre a montagem atual e múltiplo conjunto de dados, viabilizando a detecção de possíveis erros de montagem;  
 * A pipeline do GRIT está fortemente amarrada à estrutura de dados interna do Instituto Sanger e por isso não é portátil, mas é descrita aqui como um exemplo bem sucedido de implementação que mescla processos automatizados e manuais para melhorar a qualidade das montagens em uma escala de tempo aceitável para projetos de alto rendimento (*high-throughput*)  
 ### 2.2 Descrição da pipeline  
+O processo de curadoria geralmente parte de uma montagem onde haplótipos tenham sido separados (utilizando uma ferramenta como o *purge_dups*), *scaffold* tenha sido feito baseado em dados de longo alcance (*long-range data*, como por exemplo dados de Hi-C) e a montagem tenha sido polida (*polished*). A partir disso então o processo de curadoria procede com as seguintes etapas:   
+1. Detecção automática de eventuais contaminações (de acordo com a Tabela 1 do próprio [artigo](https://doi.org/10.1101/2020.08.12.247734)), combinada com remoção de sequências terminais de N's (*trailing Ns*). Checagem manual dos resultados é feita para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal.  
+2. 
+
+
+## Dúvidas  
+* Como é feita a checagem manual após descontaminação (etapa 1 da pipeline) para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal?  
 
 
 
