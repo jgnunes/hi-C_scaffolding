@@ -70,6 +70,9 @@ c) Inversões: se manifestam na forma de gravatas borboletas paralelas à diagon
 
 Para todos esses três tipos de erros comentados, é possível corrigir as montagens com um simples arrastar de *mouse* no Juicebox, utilizando para isso o módulo *Juicebox Assembly Tools*. As correções aplicadas utilizando esta ferramenta estão ilustradas nos painéis centrais das figuras acima. Finalmente, os painéis da direita ilustram a matriz atualizada após as correções serem aplicadas.  
 
+#### 1.1 Utilizando o programa PretextView  
+O time de curadoria do Instituto Sanger parece utilizar o programa [PretextView](https://github.com/wtsi-hpag/PretextView) ao invés do Juicebox. No entanto, pela minha pesquisa inicial o Juicebox parece ser uma ferramenta bem mais estabelecida, possuindo uma documentação bem mais completa e artigo já publicado. Isso me faz perguntar por qual motivo o pessoal do Sanger utiliza o PretextView. Uma possibilidade é porque esse programa foi desenvolvido pelo próprio pessoal do Sanger. Vou tentar ver se consigo alguma informação deste tipo junto à Marcela ou diretamente com algum membro do time de curadoria (um dos autores do [pré-print](https://www.biorxiv.org/content/10.1101/2020.08.12.247734v1.full.pdf) da estratégia de curadoria manual do Sanger) 
+
 ### 2. Via plot simultâneo de múltiplos conjuntos de dados contra o genoma  
 Em adição ao mapa de Hi-C, o time de curadoria do Instituto Sanger utiliza uma série de outros dados para realizar a curadoria manual da montagem ([Howe et al., 2020](https://doi.org/10.1101/2020.08.12.247734)). A ideia é plotar todos esses dados contra a montagem à procura de eventuais inconsistências entre os dados e a montagem. Essas regiões de inconsistência representam potenciais erros de montagem e, quando possível, devem ser corrigidas (em certos casos a correção requer necessariamente gerar novos dados de sequenciamento). Os tipos de dados tradicionalmente usados para a curadoria pelo time do Sanger estão resumidos na Tabela 2 do artigo de [Howe e colaboradores (2020)](https://doi.org/10.1101/2020.08.12.247734). Para plotar todos os dados simultaneamente contra o genoma a ser curado, o time utiliza o navegador de genoma *gEVAL*.  
 
@@ -80,10 +83,6 @@ Exemplo de inconsistência detectada na montagem do genoma de uma ave utilizando
 * Artigo de lançamento do programa: clique [aqui](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4978925/)  
 * Página no Sanger: clique [aqui](https://geval.sanger.ac.uk/index.html)  
 * Página no Github: clique [aqui](https://github.com/wchow/wtsi-geval-plugin)
-
-## To Do  
-* Estudar como utilizar o [Pretext View](https://github.com/wtsi-hpag/PretextView) para curadoria manual do scaffolding
-  * Ele e o Juicebox foram as sugestões iniciais de programas da Marcela 
 
 ## Referências  
 ### SALSA
