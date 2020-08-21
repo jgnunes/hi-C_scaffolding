@@ -20,12 +20,20 @@ O time de curadoria manual do Instituto Sanger lançou um [artigo](https://doi.o
 * A pipeline do GRIT está fortemente amarrada à estrutura de dados interna do Instituto Sanger e por isso não é portátil, mas é descrita aqui como um exemplo bem sucedido de implementação que mescla processos automatizados e manuais para melhorar a qualidade das montagens em uma escala de tempo aceitável para projetos de alto rendimento (*high-throughput*)  
 ### 2.2 Descrição da pipeline  
 O processo de curadoria geralmente parte de uma montagem onde haplótipos tenham sido separados (utilizando uma ferramenta como o *purge_dups*), *scaffold* tenha sido feito baseado em dados de longo alcance (*long-range data*, como por exemplo dados de Hi-C) e a montagem tenha sido polida (*polished*). A partir disso então o processo de curadoria procede com as seguintes etapas:   
-1. Detecção automática de eventuais contaminações (de acordo com a Tabela 1 do próprio [artigo](https://doi.org/10.1101/2020.08.12.247734)), combinada com remoção de sequências terminais de N's (*trailing Ns*). Checagem manual dos resultados é feita para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal.  
-2. 
+1. Detecção automática de eventuais contaminações (de acordo com a Tabela 1 do próprio [artigo](https://doi.org/10.1101/2020.08.12.247734)), combinada com remoção de sequências terminais de N's (*trailing Ns*). Checagem manual dos resultados é feita para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal;  
+2. Dados disponíveis são carregados no *gEVAL* (construído baseado no *framework* do Ensembl). Quais análises serão carregadas no *gEVAL* dependem da disponibilidade para a espécie, mas tipicamente são os tipos listados na Tabela 2 do próprio [artigo](https://doi.org/10.1101/2020.08.12.247734). O processo de análises + carregamento das análises no *gEVAL* tipicamente dura em torno de 3 dias para cada 1 Gb; 
+3. Curadores experientes utilizam o banco de dados e a visualização do *gEVAL*, bem como mapas de Hi-C (esses gerados fora do *gEVAL* e visualizados usando os programas *HiGlass* ou *pretext*) para buscar por eventuais discordâncias e decidir se e como ajustar a montagem com base nos dados disponíveis. Em casos raros as informações disponíveis via *gEVAL* e mapas de Hi-C não são suficientes para decidir se uma mudança é necessária;  
+4. Curadores utilizam ferramentais adicionais como [gap5](https://academic.oup.com/bioinformatics/article/26/14/1699/178142) para análise aprofundada de leituras (*reads*) mapeadas ou [Genomicus](https://academic.oup.com/nar/article/46/D1/D816/4566017);  
+5. Curadores propõem intervenções na montagem, tais como quebra (*break*) e junção (*join*) de sequências, mudança de ordem e orientação de scaffolds e contigs, e remoção de falsas duplicações. Desemaranhar (*to detangle*) colapsos de sequências (quando por exemplo uma sequência de repetições é representada por uma única unidade repetitiva) é possível atualmente apenas quando dados adicionais podem ser suportados para re-montagem local; 
 
+#### 2.2.1 Tempo exigido para curadoria  
+* Para projetos com necessidade de alta performance (*high-throughput*) como por exemplo VGP e DToL, a curadoria é feita geralmente restrita a uma solução de 100 kb, o que permite um curador experiente a completar um processo de curadoria de 1 Gb de sequências em cerca de 3 dias;  
+* Para projetos sem restrições de tempo e focados em genomas referências únicos, como por exemplo o GRC, não existe limite resolução para a curadoria.
+
+#### 2.2.2 Funcionamento do *gEVAL*
+* Durante o processo de curadoria com *gEVAL*, os scaffolds são divididos em componentes de igual tamanho, com sua ordem a orientação salvas em um *path file* sob controle de versão, onde o nome do componente, sua orientação e nome do scaffold são listados. Se qualquer alteração for necessária durante a curadoria, os curadores simplesmente alteram a ordem/orientação do componente no *path file*. Se necessária, os componentes podem ser quebrados utilizando *scripts* sob medida (*bespoke*) para criar novos componentes e armazená-los no banco de dados do *gEVAL*. Após a curadoria ser finalizada, os componentes são processados automaticamente para gerar a versão final da montagem para submissão. Todo o processo de curadoria é registrado, com um histórico das edições aplicadas mantido.  
 
 ## Dúvidas  
 * Como é feita a checagem manual após descontaminação (etapa 1 da pipeline) para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal?  
-
-
-
+* Como gap5 e Genomicus se diferenciam do gEVAL? A princípio me parece que todas as informações de mapeamento de reads e de sintenia, visualizadas respectivamente por gap5 e Genomicus, já poderiam ter sido avaliadas usando o gEVAL.
+* O que exatamente é o limite de resolução da curadoria e o que significa um limite de 100 kb? 
