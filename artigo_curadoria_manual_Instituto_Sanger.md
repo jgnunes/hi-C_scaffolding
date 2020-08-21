@@ -30,8 +30,14 @@ O processo de curadoria geralmente parte de uma montagem onde haplótipos tenham
 * Para projetos com necessidade de alta performance (*high-throughput*) como por exemplo VGP e DToL, a curadoria é feita geralmente restrita a uma solução de 100 kb, o que permite um curador experiente a completar um processo de curadoria de 1 Gb de sequências em cerca de 3 dias;  
 * Para projetos sem restrições de tempo e focados em genomas referências únicos, como por exemplo o GRC, não existe limite resolução para a curadoria.
 
-#### 2.2.2 Funcionamento do *gEVAL*
-* Durante o processo de curadoria com *gEVAL*, os scaffolds são divididos em componentes de igual tamanho, com sua ordem a orientação salvas em um *path file* sob controle de versão, onde o nome do componente, sua orientação e nome do scaffold são listados. Se qualquer alteração for necessária durante a curadoria, os curadores simplesmente alteram a ordem/orientação do componente no *path file*. Se necessária, os componentes podem ser quebrados utilizando *scripts* sob medida (*bespoke*) para criar novos componentes e armazená-los no banco de dados do *gEVAL*. Após a curadoria ser finalizada, os componentes são processados automaticamente para gerar a versão final da montagem para submissão. Todo o processo de curadoria é registrado, com um histórico das edições aplicadas mantido.  
+#### 2.2.2 Princípios básicos do *gEVAL*
+* Durante o processo de curadoria com *gEVAL*, os scaffolds são divididos em componentes de igual tamanho, com sua ordem a orientação salvas em um *path file* sob controle de versão, onde o nome do componente, sua orientação e nome do scaffold são listados. Se qualquer alteração for necessária durante a curadoria, os curadores simplesmente alteram a ordem/orientação do componente no *path file*; 
+* Se necessário, os componentes podem ser quebrados utilizando *scripts* sob medida (*bespoke*) para criar novos componentes e armazená-los no banco de dados do *gEVAL*. Após a curadoria ser finalizada, os componentes são processados automaticamente para gerar a versão final da montagem para submissão. Todo o processo de curadoria é registrado, com um histórico das edições aplicadas mantido.  
+
+### 2.3 Impacto da curadoria em projetos de alta performance (*high-throughphut*)
+* Durante a curadoria de 111 montagens (representando 174 Gb de sequência) para os projetos VGP e DToL, foi aplicada uma média de 221 intervenções por Gb de sequência;  
+* Para genomas inicialmente bem fragmentados, o processo de curadoria tende a aumentar o N50, aumentando a contiguidade das montagens; 
+* Para genomas *over-scaffolded*, no entanto, o processo de curadoria pode reduzir o N50 até a metade ao, por exemplo, desfazer erros de junção (*misjoins*) detectados. 
 
 ## Dúvidas  
 * Como é feita a checagem manual após descontaminação (etapa 1 da pipeline) para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal?  
