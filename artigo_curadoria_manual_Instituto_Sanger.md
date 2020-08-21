@@ -10,5 +10,7 @@ O time de curadoria manual do Instituto Sanger lançou um [artigo]((https://doi.
 * Já existem uma série de ferramentas que permitem a inspeção de uma montagem utilizando diferentes conjuntos de dados, porém, diferentes ferramentas possibilitam a inspeção com diferentes conjuntos de dados, impedindo o cenário ideal onde todos esses conjuntos seriam analisados simultaneamente;  
 * Recentemente, pesquisadores do Instituto Sanger lançaram um navegador de genomas (*genoma browser*) chamado *gEVAL*, capaz de plotar simultaneamente diferentes tipos de dados contra uma montagem, facilitando uma inspeção guiada por múltiplas evidências;  
 
+## Resultados  
+### Avaliando coerência, cobertura e contaminação da montagem
 
 
