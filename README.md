@@ -54,7 +54,7 @@ A curadoria manual é uma etapa de correção de eventuais erros de scaffolding 
 ### 1. Via mapas de Hi-C  
 #### 1.1 Utilizando o programa Juicebox
 
-O programa Juicebox tem um módulo específico para identificar e corrigir erros de montagem, chamado *Juicebox Assembly Tools*. No artigo de lançamento do módulo, Dudchenko e colaboradores (2018) demonstram como o módulo pode ser utilizado para detecção de translocações, inversões e erros de junção (*misjoins*). De acordo com os autores, esses erros se manifestam em padrões identificáveis (indicados por grandes setas nos painés esquerdos abaixo) nos mapas de frequência de contato obtidos por dados Hi-C:  
+O programa [Juicebox](https://github.com/aidenlab/Juicebox) tem um módulo específico para identificar e corrigir erros de montagem, chamado [*Juicebox Assembly Tools*](https://github.com/aidenlab/Juicebox/wiki/Juicebox-Assembly-Tools). No artigo de lançamento do módulo, Dudchenko e colaboradores (2018) demonstram como o módulo pode ser utilizado para detecção de translocações, inversões e erros de junção (*misjoins*). De acordo com os autores, esses erros se manifestam em padrões identificáveis (indicados por grandes setas nos painés esquerdos abaixo) nos mapas de frequência de contato obtidos por dados Hi-C:  
 
 a) Erros de junção: quando duas sequências são unidas erroneamente, isso se manifesta sob a forma de um grande clarão (região de muito baixa densidade de contato) no quadrante superior direito e inferior esquerdo.  
 
