@@ -77,18 +77,31 @@ O time de curadoria do Instituto Sanger parece utilizar o programa [PretextView]
 Em adição ao mapa de Hi-C, o time de curadoria do Instituto Sanger utiliza uma série de outros dados para realizar a curadoria manual da montagem ([Howe et al., 2020](https://doi.org/10.1101/2020.08.12.247734)). A ideia é plotar todos esses dados contra a montagem à procura de eventuais inconsistências entre os dados e a montagem. Essas regiões de inconsistência representam potenciais erros de montagem e, quando possível, devem ser corrigidas (em certos casos a correção requer necessariamente gerar novos dados de sequenciamento). Os tipos de dados tradicionalmente usados para a curadoria pelo time do Sanger estão resumidos na Tabela 2 do artigo de [Howe e colaboradores (2020)](https://doi.org/10.1101/2020.08.12.247734). Para plotar todos os dados simultaneamente contra o genoma a ser curado, o time utiliza o navegador de genoma *gEVAL*.  
 
 <img src="https://user-images.githubusercontent.com/22843614/90806533-87b5f280-e2f3-11ea-8b2e-410b98f31016.png">  
-Exemplo de inconsistência detectada na montagem do genoma de uma ave utilizando o programa *gEVAL*. Fonte: Howe et al., 2020
+Exemplo de inconsistência detectada na montagem do genoma de uma ave utilizando o programa gEVAL. Fonte: Howe et al., 2020
 
-#### 2.1 Programa gEVAL  
-* Artigo de lançamento do programa: clique [aqui](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4978925/)  
-* Página no Sanger: clique [aqui](https://geval.sanger.ac.uk/index.html)  
-* Página no Github: clique [aqui](https://github.com/wchow/wtsi-geval-plugin)
+#### 2.1 Etapas da pipeline de curadoria do time do Instituto Sanger  
+O processo de curadoria geralmente parte de uma montagem onde haplótipos tenham sido separados (utilizando uma ferramenta como o *purge_dups*), *scaffold* tenha sido feito baseado em dados de longo alcance (*long-range data*, como por exemplo dados de Hi-C) e a montagem tenha sido polida (*polished*). A partir disso então o processo de curadoria procede com as seguintes etapas:  
+1. Detecção automática de eventuais contaminações (de acordo com a Tabela 1 do próprio [artigo](https://doi.org/10.1101/2020.08.12.247734)), combinada com remoção de sequências terminais de N's (*trailing Ns*). Checagem manual dos resultados é feita para previnir remoção errônea de regiões potencialmente derivadas de transferência horizontal;  
+2. Dados disponíveis são carregados no *gEVAL* (construído baseado no *framework* do Ensembl). Quais análises serão carregadas no *gEVAL* dependem da disponibilidade para a espécie, mas tipicamente são os tipos listados na Tabela 2 do próprio [artigo](https://doi.org/10.1101/2020.08.12.247734). O processo de análises + carregamento das análises no *gEVAL* tipicamente dura em torno de 3 dias para cada 1 Gb; 
+3. Curadores experientes utilizam o banco de dados e a visualização do *gEVAL*, bem como mapas de Hi-C (esses gerados fora do *gEVAL* e visualizados usando os programas *HiGlass* ou *pretext*) para buscar por eventuais discordâncias e decidir se e como ajustar a montagem com base nos dados disponíveis. Em casos raros as informações disponíveis via *gEVAL* e mapas de Hi-C não são suficientes para decidir se uma mudança é necessária;  
+4. Curadores utilizam ferramentais adicionais como [gap5](https://academic.oup.com/bioinformatics/article/26/14/1699/178142) para análise aprofundada de leituras (*reads*) mapeadas ou [Genomicus](https://academic.oup.com/nar/article/46/D1/D816/4566017);  
+5. Curadores propõem intervenções na montagem, tais como quebra (*break*) e junção (*join*) de sequências, mudança de ordem e orientação de scaffolds e contigs, e remoção de falsas duplicações. Desemaranhar (*to detangle*) colapsos de sequências (quando por exemplo uma sequência de repetições é representada por uma única unidade repetitiva) é possível atualmente apenas quando dados adicionais podem ser suportados para re-montagem local.
+
 
 ## Referências  
 ### SALSA
-* [Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
-* [Repositório no Github](https://github.com/marbl/SALSA)  
+* [Artigo](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
+* [Repositório Github](https://github.com/marbl/SALSA)  
 
-### Curadoria manual   
-* [Dudchenko et al., 2018](https://www.biorxiv.org/content/10.1101/254797v1.full#F2)
+### Juicebox Assembly Tools  
+* [Artigo](https://www.biorxiv.org/content/10.1101/254797v1.full#F2) 
+* [Repositório Github](https://github.com/aidenlab/Juicebox/wiki/Juicebox-Assembly-Tools)
+ 
+### Artigo curadoria manual time do Instituto Sanger  
+* [Howe et al., 2020](https://doi.org/10.1101/2020.08.12.247734)  
+
+### Navegador *gEVAL*  
+* [Artigo](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4978925/)  
+* [Página no Sanger](https://geval.sanger.ac.uk/index.html)  
+* [Repositório Github](https://github.com/wchow/wtsi-geval-plugin)
 
