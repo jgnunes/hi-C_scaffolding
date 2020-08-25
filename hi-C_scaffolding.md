@@ -48,3 +48,7 @@ Por fim, pode ser de nosso interesse converter o arquivo *scaffolds_FINAL.fasta*
 
 <img src="https://user-images.githubusercontent.com/22843614/89295465-6be5f780-d637-11ea-9032-9d3e29a3dd0b.png" width="40%">
 
+## Referências  
+### SALSA
+* [Artigo](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3879-z)  
+* [Repositório Github](https://github.com/marbl/SALSA)  
